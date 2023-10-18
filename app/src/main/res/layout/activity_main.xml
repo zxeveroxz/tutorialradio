@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0000"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+
+        android:foregroundTint="#FF0000"
+
+        tools:context=".MainActivity">
+
+
+        <Switch
+            android:id="@+id/switchStreaming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="squareBarVisualization"
+            android:scaleX="4"
+            android:scaleY="4"
+            android:showText="true"
+            android:textAlignment="center"
+            android:textOff="Off"
+            android:textOn="ON"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="50dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="16dp">
+
+
+            <ImageView
+                android:id="@+id/im_face"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.113"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_play"
+                app:layout_constraintVertical_bias="0.538"
+                app:srcCompat="@drawable/facebook" />
+
+            <ImageView
+                android:id="@+id/img_wa"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="92dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.164"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/btn_play"
+                app:layout_constraintVertical_bias="0.916"
+                app:srcCompat="@drawable/whatsapp" />
+
+            <ImageView
+                android:id="@+id/img_you"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.284"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/btn_play"
+                app:layout_constraintVertical_bias="0.538"
+                app:srcCompat="@drawable/youtube" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:background="#787878"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <com.chibde.visualizer.SquareBarVisualizer
+            android:id="@+id/visualizerSquareBar"
+            android:layout_width="match_parent"
+            android:layout_height="140dp" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
