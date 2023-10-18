@@ -28,7 +28,6 @@ import com.google.android.exoplayer2.Player;
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private ExoPlayer exoPlayer;
-    private Switch switchStreaming;
     private Uri streamUri;
 
     public MediaPlayer mediaPlayer;
@@ -45,28 +44,9 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("https://radiofelima.radio12345.com/");
 
         exoPlayer = new ExoPlayer.Builder(this).build();
-        switchStreaming = findViewById(R.id.switchStreaming);
+        Switch switchStreaming = findViewById(R.id.switchStreaming);
 
-        exoPlayer.addListener(new Player.EventListener() {
-           // @Override
-            public void onPlayerError(ExoPlaybackException error) {
-                // Maneja eventos de error aquí
-                if (error.type == ExoPlaybackException.TYPE_SOURCE) {
-                    // Error de origen (puede estar relacionado con el servidor o la red)
 
-                    // Actualiza el WebView
-                    runOnUiThread(() -> {
-                        webView.reload(); // Actualiza el contenido del WebView
-                    });
-
-                    // Espera un momento antes de intentar reiniciar la reproducción del streaming
-                    new Handler().postDelayed(() -> {
-                        // Intenta reiniciar la reproducción del streaming
-                        startStreaming();
-                    }, 1000); // Espera 3 segundos (ajusta según tus necesidades)
-                }
-            }
-        });
 //playing media
         //mediaPlayer.start();
 
