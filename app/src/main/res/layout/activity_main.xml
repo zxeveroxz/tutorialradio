@@ -18,7 +18,7 @@
         tools:context=".MainActivity">
 
 
-        <Switch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchStreaming"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,7 +100,11 @@
         <com.chibde.visualizer.SquareBarVisualizer
             android:id="@+id/visualizerSquareBar"
             android:layout_width="match_parent"
-            android:layout_height="140dp" />
+            android:layout_height="140dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <WebView
             android:id="@+id/webView"
